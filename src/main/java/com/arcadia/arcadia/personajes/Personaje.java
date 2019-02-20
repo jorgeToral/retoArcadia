@@ -14,6 +14,13 @@ public abstract class Personaje  {
 
   private Arma arma;
 
+  public double getPoderAtaque() {
+
+    System.out.println( "------------------" + this.fuerzaBase );
+    return this.fuerzaBase + this.getArma().getFuerzaAtaque();
+
+  }
+
   public double fuerzaRestante() {
 
     return this.getArma().ataque( this.getPoderAtaque() );

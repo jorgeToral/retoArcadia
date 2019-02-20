@@ -4,36 +4,35 @@ import com.arcadia.arcadia.personajes.*;
 
 public class PersonajeFactory {
 
-  public Personaje getPersonaje(String personaje) {
+  public Personaje getPersonaje(TipoPersonaje personaje) throws Exception {
 
-    Personaje personajeSeleccionado ;
+    Personaje personajeSeleccionado;
 
     switch (personaje) {
 
-      case "comandante":
+      case Comandante:
         personajeSeleccionado =  new  Comandante();
         break;
-      case "arquero":
+      case Arquero:
         personajeSeleccionado = new Arquero();
         break;
-      case "caballero":
+      case Caballero:
         personajeSeleccionado = new Caballero();
         break;
-      case "peon":
+      case Peon:
         personajeSeleccionado = new Peon();
         break;
-      case "mago":
+      case Mago:
         personajeSeleccionado = new Mago();
         break;
-      case "ogro":
+      case Ogro:
         personajeSeleccionado = new Ogro();
         break;
-      case "troll":
+      case Troll:
         personajeSeleccionado = new Troll();
         break;
       default:
-        personajeSeleccionado = new Comandante();
-
+        throw new Exception("Personaje no encontrado");
     }
 
     return personajeSeleccionado;
